@@ -1,0 +1,120 @@
+/* Reset default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set background image and make it cover the entire screen */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://www.w3schools.com/w3images/lights.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Center the content */
+.content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Style for the title */
+.title {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Style for the message */
+.message {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInMessage 3s ease-out forwards;
+}
+
+/* Button styling */
+.change-message-btn {
+    background-color: #f06292;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.change-message-btn:hover {
+    background-color: #e91e63;
+}
+
+/* Heart animation */
+.heart {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: relative;
+    margin-top: 20px;
+    transform: rotate(45deg);
+    animation: heartAnimation 2s ease-in-out infinite;
+}
+
+/* Heart shape using pseudo elements */
+.heart::before, .heart::after {
+    content: '';
+    width: 50px;
+    height: 80px;
+    background-color: red;
+    border-radius: 50px;
+    position: absolute;
+    top: 0;
+}
+
+.heart::before {
+    left: -50px;
+}
+
+.heart::after {
+    left: 50px;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade In Message Animation */
+@keyframes fadeInMessage {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Heart Animation */
+@keyframes heartAnimation {
+    0%, 100% {
+        transform: scale(1) rotate(45deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(45deg);
+    }
+}
